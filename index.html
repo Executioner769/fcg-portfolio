@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+    <title>Portfolio</title>
+</head>
+
+<body>
+    <header>
+        <nav id="navbar">
+            <ul>
+                <li>
+                    <a href="#About">About</a>
+                </li>
+                <li>
+                    <a href="#projects">Projects</a>
+                </li>
+                <li>
+                    <a href="#Contact">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main id="About">
+        <section id="welcome-section">
+            <h1 class="title">Hey I am Madhu.</h1>
+            <p class="subtitle">a FullStack developer</p>
+        </section>
+    </main>
+    <article>
+        <section id="projects">
+            <h1 class="projects-title">Here are some of my Projects</h1>
+            <div class="projects-list">
+                <div class="project-tile">
+                    <div class="project-title">
+                        <a href="/tributePage/index.html" target="_blank">Tribute Page</a>
+                    </div>
+                    <div class="project-subtitle">
+                        <p>
+                            A tribute page to Dr.Norman Borlaug who is a famous American Physicist. This page is a
+                            tribute to him and his work.
+                        </p>
+                    </div>
+                </div>
+                <div class="project-tile">
+                    <div class="project-title">
+                        <a href="/surveyForm/index.html" target="_blank">Survey Form</a>
+                    </div>
+                    <div class="project-subtitle">
+                        <p>
+                            A survey form that allows users to fill out a survey and submit. Only the frontend
+                            implemented.
+                        </p>
+                    </div>
+                </div>
+                <div class="project-tile">
+                    <div class="project-title">
+                        <a href="/technicalDocPage/index.html" target="_blank">Technical Documentation</a>
+                    </div>
+                    <div class="project-subtitle">
+                        <p>
+                            Technical Documentation of for JavaScript. It is just a template for the frontend.
+                        </p>
+                    </div>
+                </div>
+                <div class="project-tile">
+                    <div class="project-title">
+                        <a href="/productLandingPage/index.html" target="_blank">Product Page</a>
+                    </div>
+                    <div class="project-subtitle">
+                        <p>
+                            Website about guitars sold by Gibson. Features of a Guitar. Only the frontend implemented.
+                            Pricing of some guitars displayed.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </article>
+    <article>
+        <section id="Contact">
+            <h1 class="contact-title">
+                Wanna get in touch?
+            </h1>
+            <p class="contact-subtitle">
+                <span>I am always open to new opportunities.</span>
+            </p>
+            <ul class="contact-links">
+                <li>
+                    <a class="social" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-facebook"></i>
+                        <span>Facebook</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="social" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="social" href="https://github.com/Executioner769" target="_blank"
+                        rel="noopener noreferrer">
+                        <i class="fa-brands fa-github"></i>
+                        <span>Github</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="social" href="mailto:madhuman1012@gmail.com">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>Send a mail</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="tel:+910000000000" class="social">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                        <span>Call me</span>
+                    </a>
+                </li>
+            </ul>
+            <p style="cursor:pointer ;" class="contact-subtitle"><span class="music" onclick="handleTouch()"><i
+                        class="fa-brands fa-spotify"></i>Music</span>
+            </p>
+            <p style="display: none;" id="music-controls">
+                <!-- Volume Slide bar -->
+                <label for="volume">
+                    <i class="fa-solid fa-volume-up"></i>
+                </label>
+                <input type="range" min="0" max="1" step="0.01" value="1" id="volume" name="volume"
+                    oninput="handleVolume()">
+            </p>
+        </section>
+    </article>
+    <footer>
+        <p>
+            This is a basic portfolio website. No any real content is added.
+        </p>
+        <p>
+            &copy; Created for <a id="fcg" href="https://www.freecodecamp.org/">freeCodeCamp</a>
+        </p>
+    </footer>
+</body>
+
+<audio id="music">
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+    const handleTouch = () => {
+        let music = document.getElementById("music");
+        let musicControls = document.getElementById("music-controls");
+        if (music.paused) {
+            musicControls.style.display = "block";
+            music.play();
+        } else {
+            music.pause();
+            musicControls.style.display = "none";
+        }
+    }
+
+    const handleVolume = () => {
+        let music = document.getElementById("music");
+        let volume = document.getElementById("volume");
+        music.volume = volume.value;
+    }
+</script>
+
+</html>
